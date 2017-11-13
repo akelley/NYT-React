@@ -1,0 +1,7 @@
+.panel-heading {
+	background-color: #2c3e50!important;
+}
+
+.panel, .panel-heading, .list-group-item {
+	border: 1px solid #2c3e50!important ;
+}
