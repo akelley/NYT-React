@@ -56,9 +56,6 @@ const Main= props =>
 				</div>
 			</div>
 		</div>
-		<li className="list-group-item">
-			<h3><span><em>Enter search terms to begin...</em></span></h3>
-		</li>
 	</div>;
 
 export default Main;

@@ -11,16 +11,14 @@
 }
 
 .list-overflow-container li {
+  padding-top: 0;
   border-radius: 0px;
   border-left: none;
   border-right: none;
 }
 
-.list-overflow-container li * {
-  cursor: pointer;
-}
-
 .list-overflow-container li a {
+  cursor: pointer;
   color: #2A878C;
 }
 
@@ -30,4 +28,9 @@
 
 .list-overflow-container li:last-child {
   border-bottom: none;
+}
+
+button {
+  float: right;
+  border-radius: 2px;
 }
