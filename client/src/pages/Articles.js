@@ -39,16 +39,10 @@ class Articles extends Component {
   };
 
   handleArticleSave = id => {
-    const articleToSave = this.state.articles.filter(article => article.id = id)[0];
-    API.saveArticle(articleToSave);
-
-    var array = this.state.articles;
-    var index = array.indexOf(id);
-    array.splice(index, 1);
-    
-    this.setState({ 
-      articles: array 
-    });
+    const articleToSave = this.state.articles.filter(article => article.id === id)[0];
+    const newArticles = this.state.articles.filter(article => article.id !== id);
+    API.saveArticle(articleToSave)
+      .then(() => this.setState({ articles: newArticles  }));
   };
 
   showArticles = () => {
