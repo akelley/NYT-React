@@ -19,14 +19,16 @@ export default {
   },
 
   getArticles: function() {
-    return axios.get("/saved");
+    return axios.get("/api/saved");
   },
 
   deleteArticle: function(id) {
-    return axios.delete("/saved/" + id);
-  },
+    return axios.delete("/api/articles/saved/" + id);
+  },    
 
-  saveArticle: function(bookData) {
-    return axios.post("/saved", bookData);
+  saveArticle: function(articleData) {
+    return axios.post("/api/saved", articleData);
   }
 };
+
+

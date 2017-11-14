@@ -38,8 +38,17 @@ class Articles extends Component {
     this.loadArticles();
   };
 
-  handleArticleSave = (id) => {
-    API.saveArticle(id);
+  handleArticleSave = id => {
+    const articleToSave = this.state.articles.filter(article => article.id = id)[0];
+    API.saveArticle(articleToSave);
+
+    var array = this.state.articles;
+    var index = array.indexOf(id);
+    array.splice(index, 1);
+    
+    this.setState({ 
+      articles: array 
+    });
   };
 
   showArticles = () => {
@@ -87,7 +96,7 @@ class Articles extends Component {
                       pub_date={article.pub_date}
                       web_url={article.web_url}
                       author={article.byline.original}
-                      handleArticleSubmit = {this.handleArticleSave}
+                      handleArticleSave = {this.handleArticleSave}
                     />
                   );
                 })}
