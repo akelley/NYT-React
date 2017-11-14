@@ -38,10 +38,18 @@ class Articles extends Component {
     this.loadArticles();
   };
 
-  handleArticleSave = id => {
-    const articleToSave = this.state.articles.filter(article => article.id === id)[0];
-    const newArticles = this.state.articles.filter(article => article.id !== id);
-    API.saveArticle(articleToSave)
+  handleArticleSave = _id => {
+    const articleToSave = this.state.articles.filter(article => article._id === _id)[0];
+    const articleObject = {
+      article_key: articleToSave._id,
+      title: articleToSave.headline.main,
+      author: articleToSave.byline.original,
+      pub_date: articleToSave.pub_date,
+      web_url: articleToSave.web_url
+    }
+
+    const newArticles = this.state.articles.filter(article => article._id !== _id);
+    API.saveArticle(articleObject)
       .then(() => this.setState({ articles: newArticles  }));
   };
 
@@ -85,7 +93,7 @@ class Articles extends Component {
                   return (
                     <ArticleListItem
                       key={article._id}
-                      id={article._id}
+                      _id={article._id}
                       title={article.headline.main}
                       pub_date={article.pub_date}
                       web_url={article.web_url}

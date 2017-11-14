@@ -13,8 +13,11 @@ class Saved extends Component {
   };
 
   componentDidMount = () => {
-    API.getArticles();
-  }
+    API.getArticles().then(res => this.setState({
+        articles: res.data
+      }))
+      .catch(err => console.log(err));
+  };
 
   handleArticleDelete = id => {
     API.deleteArticle(id).then(res => API.getArticles()).catch(err => console.log(err));
@@ -47,11 +50,11 @@ class Saved extends Component {
                   return (
                     <SavedArticleListItem
                       key={article._id}
-                      id={article._id}
-                      title={article.headline.main}
+                      _id={article._id}
+                      title={article.title}
                       pub_date={article.pub_date}
                       web_url={article.web_url}
-                      author={article.byline.original}
+                      author={article.author}
                       handleArticleDelete = {this.handleArticleDelete}
                     />
                   );
