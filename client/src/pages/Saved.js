@@ -19,8 +19,10 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
-  handleArticleDelete = id => {
-    API.deleteArticle(id).then(res => API.getArticles()).catch(err => console.log(err));
+
+  handleArticleDelete = _id => {
+    API.deleteArticle(_id).then(() => this.setState({ articles: newArticles }));
+    const newArticles = this.state.articles.filter(article => article._id !== _id);
   };
 
   render() {

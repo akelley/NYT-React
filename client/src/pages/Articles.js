@@ -50,7 +50,7 @@ class Articles extends Component {
 
     const newArticles = this.state.articles.filter(article => article._id !== _id);
     API.saveArticle(articleObject)
-      .then(() => this.setState({ articles: newArticles  }));
+      .then(() => this.setState({ articles: newArticles }));
   };
 
   showArticles = () => {
