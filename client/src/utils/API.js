@@ -22,6 +22,10 @@ export default {
     return axios.get("/api/articles/saved");
   },
 
+  deleteAll: function() {
+    return axios.delete("/api/articles/saved");
+  },
+
   deleteArticle: function(_id) {
     return axios.delete("/api/articles/saved/" + _id);
   },    

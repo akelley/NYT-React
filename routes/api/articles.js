@@ -3,6 +3,7 @@ const articlesController = require("../../controllers/articlesController");
 
 router.route("/saved").get(articlesController.findAll);
 router.route("/saved").post(articlesController.create);
+router.route("/saved").delete(articlesController.removeAll);
 router.route("/saved/:id").delete(articlesController.remove);
 
 module.exports = router;

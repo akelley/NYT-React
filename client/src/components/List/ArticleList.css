@@ -1,6 +1,6 @@
 .list-overflow-container {
   max-height: 545px;
-  border: 1px #DDDDDD solid;
+  border: 1px black solid;
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -30,7 +30,35 @@
   border-bottom: none;
 }
 
+.list-group-item a {
+  cursor: pointer;
+  color: #2A878C;
+}
+
 button {
   float: right;
   border-radius: 2px;
+}
+
+.btn-clear {
+  background-color: Crimson;
+  color: white;
+  border-radius: 5px;
+  margin: 5px 10px 5px 5px;
+  height: 30px;
+  line-height: 10px;
+  border: 1px dotted white;
+}
+
+.btn-clear:hover {
+  background-color: Red; 
+}
+
+.btn-alert {
+  background-color: Coral;
+  color: white
+}
+
+.btn-alert:hover {
+  background-color: Tomato; 
 }

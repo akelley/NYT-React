@@ -7,8 +7,9 @@ export const SavedArticleList = ({ children }) => {
 	    <div className="row"> 
 	    	<div className="col-md-12">
 	    		<div className="panel panel-primary">
+	    			<button className="btn-clear" onClick={this.handleCollectionDelete}>Clear All</button>
 	    		  <div className="panel-heading">
-	    		  	<h1 className="panel-title"><strong>Saved Articles</strong></h1>
+	    		  	<h1 className="panel-title"><strong><span className="glyphicon glyphicon-ok"> </span>&nbsp; Saved Articles</strong></h1>
 	    		  </div>
 	    		  <div className="panel-body">	  	
 				      <ul className="list-group">

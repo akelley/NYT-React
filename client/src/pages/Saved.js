@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import Jumbotron from "./../components/Jumbotron";
-import DeleteBtn from "./../components/DeleteBtn";
 import { Col, Row, Container } from "./../components/Grid";
 import { SavedArticleList, SavedArticleListItem } from "./../components/List";
-import { Input, TextArea, FormBtn } from "./../components/Form";
 import API from "./../utils/API";
-import Main from "./../components/Main";
 
 class Saved extends Component {
   state = {
-    articles: []
+    articles: [],
+    joke: 'hellooo fren'
   };
 
   componentDidMount = () => {
@@ -19,6 +16,10 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
+  handleCollectionDelete = () => {
+    console.log("heop!!!");
+    API.deleteAll();
+  };
 
   handleArticleDelete = _id => {
     API.deleteArticle(_id).then(() => this.setState({ articles: newArticles }));
@@ -26,28 +27,21 @@ class Saved extends Component {
   };
 
   render() {
-    
     return(
       <Container fluid>
         <Row>
           <Col size="md-1"></Col>
           <Col size="md-10">
-            <Jumbotron>
-              <h2 className="text-center">(ReactJS) New York Times Article Scraper</h2>
-              <h3 className="text-center">Search for and save articles of interest.</h3>
-            </Jumbotron>
-          </Col>
-          <Col size="md-1"></Col>
-        </Row>
-        <Row>
-          <Col size="md-1"></Col>
-          <Col size="md-10">
             {!this.state.articles.length ? (
-              <SavedArticleList>
+              <SavedArticleList
+                handleCollectionDelete={this.handleCollectionDelete}
+              >
                 <ul className="list-group"></ul>
               </SavedArticleList>
             ) : (
-              <SavedArticleList length={this.state.articles.length}>
+              <SavedArticleList length={this.state.articles.length}
+                handleCollectionDelete={this.handleCollectionDelete}
+              >
                 {this.state.articles.map(article => {
                   return (
                     <SavedArticleListItem

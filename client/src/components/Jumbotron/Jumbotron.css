@@ -1,0 +1,16 @@
+.jumbotron {
+	padding-top: 0px!important;
+	padding-bottom: 0px!important;
+	border: 1px dotted #2c3e50;
+	background-image: url("http://www.chicagonow.com/candid-candace/files/2016/02/Newspapers.jpg");
+}
+
+h2 {
+	margin: 0;
+	padding-top: 20px;
+}
+
+.jumbotron h2, .jumbotron h3 {
+  color: #2c3e50!important;
+  text-shadow: 2px 2px 5px AntiqueWhite, 0 0 5px silver;
+}

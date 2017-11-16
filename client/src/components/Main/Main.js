@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Main.css";
+import "./Main.css";
 
 const Main= props =>
 	<div className="main-container">
@@ -8,7 +8,7 @@ const Main= props =>
 				<div className="col-lg-12">
 					<div className="panel panel-primary">
 						<div className="panel-heading">
-							<h1 className="panel-title"><strong>Query</strong></h1>
+							<h1 className="panel-title"><strong><span className="glyphicon glyphicon-pencil"> </span> Query</strong></h1>
 						</div>
 						<div className="panel-body">
 							<form>
@@ -48,7 +48,7 @@ const Main= props =>
 								</div>
 								
 								<div className="pull-right">
-									<button type="submit" onClick={props.handleFormSubmit} className="btn" style={{border: '1px dotted #2c3e50'}}><h4  style={{color: '#2c3e50'}}>Submit</h4></button>
+									<button type="submit" onClick={props.handleFormSubmit} className="btn"><h4  style={{color: '#2c3e50'}}>Submit</h4></button>
 								</div>
 							</form>
 						</div>

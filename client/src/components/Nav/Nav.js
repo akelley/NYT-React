@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Nav.css";
+import "./Nav.css";
 
 const Nav = () =>
   <div className="container-fluid">
@@ -15,11 +15,10 @@ const Nav = () =>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="/">NYT-React</a>
+                <a className="navbar-brand" href="/">NYT-React Search</a>
               </div>
               <div className="collapse navbar-collapse navbar-ex1-collapse">
                 <ul className="nav navbar-nav navbar-right">
-                  <li><a href="/search">Search</a></li>
                   <li><a href="/saved">Saved Articles</a></li>
                 </ul>
               </div>
@@ -28,7 +27,7 @@ const Nav = () =>
         </div>
       <div className="col-md-1"></div>
     </div>
-</div>;
+  </div>;
 
 export default Nav;
 

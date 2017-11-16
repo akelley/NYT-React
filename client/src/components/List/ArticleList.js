@@ -8,7 +8,7 @@ export const ArticleList = ({ children }) => {
 	    	<div className="col-md-12">
 	    		<div className="panel panel-primary">
 	    		  <div className="panel-heading">
-	    		  	<h1 className="panel-title"><strong>Results Found: {children.length} </strong></h1>
+	    		  	<h1 className="panel-title"><strong><span className="glyphicon glyphicon-th-list"> </span>&nbsp; Results Found: {children.length} </strong></h1>
 	    		  </div>
 	    		  <div className="panel-body">
 	    		  	<div className="list-overflow-container">

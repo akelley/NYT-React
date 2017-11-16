@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import Jumbotron from "./../components/Jumbotron";
-import DeleteBtn from "./../components/DeleteBtn";
 import { Col, Row, Container } from "./../components/Grid";
 import { ArticleList, ArticleListItem } from "./../components/List";
-import { Input, TextArea, FormBtn } from "./../components/Form";
 import API from "./../utils/API";
 import Main from "./../components/Main";
 
 class Articles extends Component {
   state = {
     articles: [],
-    topic: '',
+    topic: "",
     start_year: "",
     end_year: ""
   };
@@ -65,11 +62,7 @@ class Articles extends Component {
       <Container fluid>
         <Row>
           <Col size="md-1"></Col>
-          <Col size="md-10">
-            <Jumbotron>
-              <h2 className="text-center">(ReactJS) New York Times Article Scraper</h2>
-              <h3 className="text-center">Search for and save articles of interest.</h3>
-            </Jumbotron>
+          <Col size="md-10">          
             <Main 
               topic={this.state.topic}
               start_year={this.state.start_year}
@@ -85,7 +78,7 @@ class Articles extends Component {
           <Col size="md-10">
             {!this.state.articles.length ? (
               <li className="list-group-item">
-                <h3><span><em>Enter search terms to begin...</em></span></h3>
+                <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>Enter search terms to begin...</em></span></h3>
               </li>
             ) : (
               <ArticleList length={this.state.articles.length}>
@@ -98,7 +91,7 @@ class Articles extends Component {
                       pub_date={article.pub_date}
                       web_url={article.web_url}
                       author={article.byline.original}
-                      handleArticleSave = {this.handleArticleSave}
+                      handleArticleSave={this.handleArticleSave}
                     />
                   );
                 })}
