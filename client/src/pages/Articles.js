@@ -16,7 +16,7 @@ class Articles extends Component {
     API.loadArticles(this.state.topic, this.state.start_year, this.state.end_year)
       .then(res => this.setState({
         articles: res.data.response.docs,
-        topic: '',
+        topic: "",
         start_year: "",
         end_year: ""
       }))

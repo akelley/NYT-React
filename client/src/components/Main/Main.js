@@ -48,7 +48,7 @@ const Main= props =>
 								</div>
 								
 								<div className="pull-right">
-									<button type="submit" onClick={props.handleFormSubmit} className="btn"><h4  style={{color: '#2c3e50'}}>Submit</h4></button>
+									<button type="submit" onClick={props.handleFormSubmit} className="btn"><h4 style={{color: '#2c3e50'}}>Submit</h4></button>
 								</div>
 							</form>
 						</div>
