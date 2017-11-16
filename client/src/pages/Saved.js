@@ -5,8 +5,7 @@ import API from "./../utils/API";
 
 class Saved extends Component {
   state = {
-    articles: [],
-    joke: 'hellooo fren'
+    articles: []
   };
 
   componentDidMount = () => {
@@ -17,8 +16,10 @@ class Saved extends Component {
   };
 
   handleCollectionDelete = () => {
-    console.log("heop!!!");
-    API.deleteAll();
+    API.deleteAll().then(res => this.setState({
+      articles: res.data
+    }))
+    .catch(err => console.log(err));
   };
 
   handleArticleDelete = _id => {
